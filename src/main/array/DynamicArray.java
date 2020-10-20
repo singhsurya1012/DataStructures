@@ -1,4 +1,4 @@
-package datastructures.array;
+package main.array;
 
 public class DynamicArray {
 
