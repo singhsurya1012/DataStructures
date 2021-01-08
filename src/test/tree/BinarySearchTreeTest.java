@@ -10,23 +10,56 @@ public class BinarySearchTreeTest {
 
         BinarySearchTree bst = new BinarySearchTree();
 
-        bst.insertIterative(15);
-        bst.insertIterative(19);
-        bst.insertIterative(34);
-        bst.insertIterative(12);
-        bst.insertIterative(15);
+        bst.insert(15);
+        bst.insert(19);
+        bst.insert(18);
+        bst.insert(12);
+        bst.insert(32);
+        bst.insert(25);
+        bst.insert(57);
+        bst.insert(14);
+        bst.insert(43);
+        bst.insert(62);
+        bst.insert(23);
 
-        System.out.println(bst.print());
+        allTestPassed =allTestPassed && 11==bst.size();
+
         allTestPassed = allTestPassed && bst.contains(19);
-        allTestPassed = allTestPassed && !bst.contains(18);
+        allTestPassed = allTestPassed && !bst.contains(88);
         allTestPassed = allTestPassed && bst.contains(12);
 
-        System.out.println("Tree contains 19 : " + bst.contains(19));
-        System.out.println("Tree contains 18 : " + bst.contains(18));
-        System.out.println("Tree contains 12 : " + bst.contains(12));
+        allTestPassed = allTestPassed && bst.delete(57);
+        allTestPassed = allTestPassed && bst.delete(19);
+        allTestPassed = allTestPassed && bst.delete(12);
+        allTestPassed = allTestPassed && bst.delete(15);
+        allTestPassed = allTestPassed && bst.delete(88);
+
+        allTestPassed =allTestPassed && 7==bst.size();
+
+        bst.insertIterative(88);
+        bst.insertIterative(43);
+        bst.insertIterative(29);
+        bst.insertIterative(25);
 
 
+        allTestPassed = allTestPassed && bst.deleteIterative(43);
+        allTestPassed = allTestPassed && bst.deleteIterative(62);
 
-        return true;
+
+        allTestPassed = allTestPassed && !bst.contains(19);
+        allTestPassed = allTestPassed && bst.contains(88);
+        allTestPassed = allTestPassed && bst.contains(23);
+
+        allTestPassed = allTestPassed && 88==bst.getMax();
+        allTestPassed = allTestPassed && 14==bst.getMin();
+
+
+        allTestPassed = allTestPassed && bst.isBST();
+        allTestPassed = allTestPassed && bst.isBSTIterative();
+        allTestPassed = allTestPassed && bst.isBSTUsingInOrder();
+
+        allTestPassed =allTestPassed && 9==bst.size();
+
+        return allTestPassed;
     }
 }
