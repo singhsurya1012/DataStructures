@@ -1,6 +1,7 @@
 package test;
 
 import test.array.DynamicArrayTest;
+import test.heap.MaxHeapTest;
 import test.list.SinglyLinkedListTest;
 import test.queue.CircularQueueTest;
 import test.tree.BinarySearchTreeTest;
@@ -24,6 +25,9 @@ public class DataStructureTest {
 
         boolean binarySearchTreeTest = BinarySearchTreeTest.testBinarySearchTree();
         System.out.println("Binary Search Tree Test " + (binarySearchTreeTest ? "Passed" : "Failed"));
+
+        boolean maxHeapTest = MaxHeapTest.testMaxHeap();
+        System.out.println("Max Heap Test " + (maxHeapTest ? "Passed" : "Failed"));
 
 
     }
