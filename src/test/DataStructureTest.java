@@ -5,9 +5,7 @@ import test.heap.MaxHeapTest;
 import test.list.SinglyLinkedListTest;
 import test.queue.CircularQueueTest;
 import test.tree.BinarySearchTreeTest;
-
-import java.util.LinkedList;
-import java.util.List;
+import test.trie.TrieTest;
 
 public class DataStructureTest {
 
@@ -29,7 +27,12 @@ public class DataStructureTest {
         boolean maxHeapTest = MaxHeapTest.testMaxHeap();
         System.out.println("Max Heap Test " + (maxHeapTest ? "Passed" : "Failed"));
 
+        boolean rWayTrieTest = TrieTest.testRWayTrie();
+        System.out.println("R Way Trie Test " + (rWayTrieTest ? "Passed" : "Failed"));
 
+
+        boolean ternarySearchTrieTest = TrieTest.testTernarySearchTrie();
+        System.out.println("Ternary Search Trie Test " + (ternarySearchTrieTest ? "Passed" : "Failed"));
     }
 
 }
